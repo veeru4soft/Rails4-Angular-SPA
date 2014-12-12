@@ -1,5 +1,9 @@
 <div class="row">
-    <div class="col-md-4">
+<div class='ng-modal-overlay' ng-click='hideModal()'></div>
+<div class='ng-modal-dialog' ng-style='dialogStyle'><div class='ng-modal-close' ng-click='hideModal()'>X</div>
+<div class='ng-modal-dialog-content' ng-transclude></div></div></div>
+<modal-dialog show='modalShown' width='700px' height='60%'>
+    <div class="col-md-12">
         <table class="table table-striped">
             <tr>
                 <th>First Name</th>
@@ -19,7 +23,7 @@
                 <td>{{user.phone}}</td>
             </tr>
         </table>
-        <h3 class="block"> {{user.first_name}} Address </h3>
+        <h3 class="block"> {{user.first_name | capitalize:true }} Address </h3>
         <table ng-repeat="address in user.addresses" class="table">          
             <tr >
                 <th> Address1 </th>
@@ -47,6 +51,4 @@
             </tr>
         </table>
 </div>
-<br class="clear"/>
-
-<a href="#/users" class="btn btn-info"> Back </a>
+</modal-dialog>
