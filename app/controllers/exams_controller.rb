@@ -1,8 +1,6 @@
 class ExamsController < ApplicationController
   before_action :set_exam, only: [:show, :edit, :update, :destroy]
 
-  # GET /exams
-  # GET /exams.json
   def index
     @exams = Exam.all
   end
